@@ -1,8 +1,5 @@
 # 🆔 **NADRA Management System (DSA Project - C++ | Hashing)**
 
-> **Recommended Repository Title:**
-> **`NADRA-Management-System-Hashing-Cpp`**
-
 ---
 
 ## Overview
