@@ -1,165 +1,186 @@
-# 🆔 **NADRA Management System (DSA Project - C++ | Hashing)**
+# 🆔 NADRA Management System (DSA Project - C++ | Hashing & Collision Resolution)
 
-## Overview
+## 📝 Project Overview
 
-This project simulates a **NADRA (National Database & Registration Authority) Management System** built as a **Data Structures & Algorithms (DSA)** project using **C++**.
-It uses **Hashing** to efficiently manage and retrieve citizen data based on **CNIC (Computerized National Identity Card)** numbers.
+This project is a **NADRA (National Database & Registration Authority) Management System** developed using **C++** and advanced **Data Structures & Algorithms (DSA)** concepts.
+It simulates the storage and management of **CNIC-based citizen data** using **hashing techniques** for efficient searching, insertion, and deletion.
 
 ---
 
-## Key Features
+## ⚙️ Features
 
-* **Register New Citizen (Add Record)**
-* **Search Citizen by CNIC (Hashing Search)**
-* **Update Citizen Information**
+* **Register Citizen:**
+
+  * CNIC, Name, Father’s Name, Gender, Address
+* **Search Citizen by CNIC**
 * **Delete Citizen Record**
-* **Display All Citizens (Hash Table Traversal)**
-* **Efficient Data Retrieval using Hash Functions**
+* **Display All Records**
+* **Collision Handling using:**
+
+  * **Linear Probing**
+  * **Linked List Chaining**
+  * **Binary Search Tree (BST) Chaining**
+* **Performance Metrics:**
+
+  * Count of **Insertion Collisions**
+  * Count of **Search Collisions**
 
 ---
 
-## Technologies & Concepts
+## 📊 Data Structures Used
 
-| Technology                  | Purpose              |
-| --------------------------- | -------------------- |
-| **C++**                     | Programming Language |
-| **Hash Tables**             | Core Data Structure  |
-| **Chaining (Linked Lists)** | Collision Handling   |
-| **Console Application**     | User Interface       |
-
----
-
-## How It Works
-
-1. **Data Structure Used:**
-
-   * **Hash Table with Chaining**
-   * Each bucket uses a **Linked List** to handle collisions.
-
-2. **Hash Function:**
-
-   * CNIC is hashed to an index in the table using a **modular hashing algorithm**.
-
-3. **Citizen Information Fields:**
-
-   * CNIC Number
-   * Name
-   * Father’s Name
-   * Date of Birth
-   * Address
-
-4. **Operations Menu:**
-
-| Option | Description          |
-| ------ | -------------------- |
-| 1      | Register New Citizen |
-| 2      | Search by CNIC       |
-| 3      | Update Citizen       |
-| 4      | Delete Citizen       |
-| 5      | Display All Citizens |
-| 6      | Exit                 |
+| Data Structure             | Purpose                                |
+| -------------------------- | -------------------------------------- |
+| **Hash Table**             | Main storage (based on CNIC)           |
+| **Linear Probing**         | For open addressing collision handling |
+| **Linked List Chaining**   | For separate chaining                  |
+| **BST Chaining**           | For tree-based chaining                |
+| **Random Data Generation** | Random names, addresses, CNICs         |
 
 ---
 
-## Project Structure
+## 🛠️ How It Works
+
+1. **CNIC Hashing:**
+   A **rolling hash function** hashes CNIC strings into integer keys.
+
+2. **Collision Handling Techniques:**
+
+   * **Linear Probing**: Sequential search for the next empty slot.
+   * **Linked List Chaining**: Each hash slot points to a linked list of colliding entries.
+   * **BST Chaining**: Each hash slot points to a **binary search tree** for faster collision management.
+
+3. **Operations Supported:**
+
+   * Insertion of citizen records
+   * Searching by CNIC
+   * Deletion of records
+   * Display all data
+
+---
+
+## 🧰 File Structure
 
 ```
-NADRA-Management-System-Hashing-Cpp/
+NADRA-Management-System-DSA-Hashing-Cpp/
 │
-├── main.cpp           # Main source code (Hash Table implementation)
-├── README.md          # Project documentation (this file)
+├── 082_Wasiq_Part1.cpp   # Main NADRA system (Citizen records using CNIC & Hashing)
+├── 081_Wasiq_part2.cpp   # Additional hashing methods with numerical data (Prime/Even/Odd IDs)
+├── Namesboys.txt         # Random names for male citizens
+├── Namesgirls.txt        # Random names for female citizens
+├── Address.txt           # Random addresses for citizens
+├── README.md              # Project documentation (this file)
 ```
 
 ---
 
-## Usage Guide
+## 🚀 How to Run
 
-### 1️⃣ Clone the Repository
+### 1️⃣ Clone the Repository:
 
 ```bash
 git clone https://github.com/m-wasiq-37/DSA-PROJECT.git
 cd DSA-PROJECT
 ```
 
-### 2️⃣ Compile and Run
+### 2️⃣ Compile the Code:
 
 For Windows:
 
 ```bash
-g++ main.cpp -o nadra_system
+g++ 082_Wasiq_Part1.cpp -o nadra_system
 nadra_system.exe
 ```
 
 For Linux/macOS:
 
 ```bash
-g++ main.cpp -o nadra_system
+g++ 082_Wasiq_Part1.cpp -o nadra_system
 ./nadra_system
 ```
 
 ---
 
-## Example Menu Output
+## 🖥️ Menu Example
 
 ```
-========== NADRA MANAGEMENT SYSTEM ==========
-
-1. Register New Citizen
-2. Search Citizen by CNIC
-3. Update Citizen Record
-4. Delete Citizen Record
-5. Display All Citizens
-6. Exit
+1. For Linear Probing
+2. For Linked List Chaining
+3. For BST Chaining
+4. Exit
 
 Enter your choice:
 ```
 
----
+Each method has submenus for:
 
-## Learning Objectives
-
-* Implement **Hash Tables and Chaining**
-* Learn about **collision resolution techniques**
-* Apply **DSA concepts** to real-world systems
-* Practice **dynamic data management** using C++
+* Insertion
+* Deletion
+* Searching
+* Display All Records
 
 ---
 
-## Limitations
+## 📈 Performance Output Example
 
-* No file storage (data lost on program exit)
-* Only console-based interface
-* Simple hash function (can be improved for real-world scenarios)
+At the end, the system reports:
+
+```
+Linear Probing:
+Collisions in Insertion: [count]
+Collisions in Search: [count]
+
+Linked List Chaining:
+Collisions in Insertion: [count]
+Collisions in Search: [count]
+
+BST Chaining:
+Collisions in Insertion: [count]
+Collisions in Search: [count]
+```
 
 ---
 
-## Future Improvements
+## 🎯 Learning Objectives
 
-* Implement **persistent storage (file/database)**
-* Use **more advanced hash functions** (e.g., SHA family for better key distribution)
-* Develop a **GUI interface**
-* Add **biometric data handling** for advanced NADRA simulation
+* Implement **Hashing with Collision Resolution**
+* Compare **Linear Probing, Linked List Chaining, and BST Chaining**
+* Use **Random Data Generation** for testing
+* Apply **DSA concepts** in a real-world problem scenario
 
 ---
 
-## Contribution
+## 🗂️ Limitations
+
+* No persistent storage (data is lost on exit)
+* Files like `Namesboys.txt`, `Namesgirls.txt`, and `Address.txt` must exist in the same directory
+* Only console-based UI
+
+---
+
+## 🔮 Future Improvements
+
+* Add **file-based storage** (save and load data)
+* Implement **better hash functions** for real CNIC patterns
+* Develop a **GUI frontend**
+* Compare time complexities using actual timing functions
+
+---
+
+## 🤝 Contribution
 
 Contributions are welcome!
-
-1. Fork the repository
-2. Create a feature branch
-3. Commit your changes
-4. Open a Pull Request
+Feel free to fork, enhance features, or add new data structures.
 
 ---
 
-## License
+## 📄 License
 
 This project is **open-source** under the **MIT License**.
 
 ---
 
-## Acknowledgements
+## 🙌 Acknowledgements
 
 Developed by **[M Wasiq](https://github.com/m-wasiq-37)**
-For academic practice in **Data Structures (Hashing) using C++**
+For academic practice in **Hashing, Collision Handling, and Data Structures (DSA)**.
