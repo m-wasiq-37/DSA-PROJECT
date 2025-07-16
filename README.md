@@ -1,7 +1,5 @@
 # 🆔 **NADRA Management System (DSA Project - C++ | Hashing)**
 
----
-
 ## Overview
 
 This project simulates a **NADRA (National Database & Registration Authority) Management System** built as a **Data Structures & Algorithms (DSA)** project using **C++**.
